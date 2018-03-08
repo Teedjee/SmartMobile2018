@@ -518,6 +518,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">My First Application</string>
+    <string name="button_save">Save</string>
     <string name="button_send">Send</string>
     <string name="button_takepic">Take Picture</string>
     <string name="desc">picture</string>

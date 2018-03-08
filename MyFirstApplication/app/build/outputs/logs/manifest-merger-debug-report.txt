@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dcb8e037a608bc3714f667029414c09e/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/timojansen/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/6b3c00632892cf290741b059950c71a3/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/5dc70ab6f9e4253aea39c315df683769/AndroidManifest.xml:17:1-28:12
@@ -15,20 +15,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /home/timojansen/.gr
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/c541ed1abb1d0f51e62a1eeb982418fb/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/10e7426052832ee0f866ab3e68d692ae/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/b34e32db0314957a97bc14c56320b219/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:3:5-56
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-40:12
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:2:11-69
@@ -40,8 +40,12 @@ uses-feature#android.hardware.camera
 ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:6:5-73
 	android:name
 		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:6:19-57
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:7:22-78
 application
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:8:5-38:19
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:9:5-39:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dcb8e037a608bc3714f667029414c09e/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dcb8e037a608bc3714f667029414c09e/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/timojansen/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/6b3c00632892cf290741b059950c71a3/AndroidManifest.xml:9:5-20
@@ -65,49 +69,49 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/timojansen/.gradle
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/b34e32db0314957a97bc14c56320b219/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/timojansen/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/b34e32db0314957a97bc14c56320b219/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:14:9-40
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:15:9-40
 activity#com.example.timojansen.myfirstapplication.MainActivity
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:15:9-21:20
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:15:19-47
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:16:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:20:27-74
 activity#com.example.timojansen.myfirstapplication.DisplayMessageActivity
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:22:9-30:20
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:23:9-31:20
 	android:parentActivityName
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:24:13-55
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:25:13-55
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:23:13-51
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:24:13-51
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:27:13-29:49
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:28:13-30:49
 	android:value
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:29:17-46
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:30:17-46
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:28:17-63
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:29:17-63
 activity#com.example.timojansen.myfirstapplication.MyCameraActivity
-ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:31:9-37:20
+ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:32:9-38:20
 	android:parentActivityName
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:32:13-55
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:33:13-55
 	android:name
-		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:31:19-51
+		ADDED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml:32:19-51
 uses-sdk
 INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/timojansen/Documents/Semester4/SmartMobile2018/MyFirstApplication/app/src/main/AndroidManifest.xml

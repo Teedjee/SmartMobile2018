@@ -8,6 +8,12 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="26" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:debuggable="true"
@@ -26,6 +32,15 @@
         </activity>
         <activity
             android:name="com.example.timojansen.myfirstapplication.DisplayMessageActivity"
+            android:parentActivityName="com.example.timojansen.myfirstapplication.MainActivity" >
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.timojansen.myfirstapplication.MyCameraActivity"
             android:parentActivityName="com.example.timojansen.myfirstapplication.MainActivity" >
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
