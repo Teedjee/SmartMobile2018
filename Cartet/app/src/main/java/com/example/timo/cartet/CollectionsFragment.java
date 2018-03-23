@@ -13,11 +13,16 @@ import android.view.ViewGroup;
  */
 public class CollectionsFragment extends Fragment {
 
+    private static String Title = "Collections";
 
     public CollectionsFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public String toString(){
+        return Title;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

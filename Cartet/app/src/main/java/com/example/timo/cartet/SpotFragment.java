@@ -2,6 +2,7 @@ package com.example.timo.cartet;
 
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,13 +30,21 @@ import java.io.IOException;
  */
 public class SpotFragment extends Fragment {
 
+    private static String Title = "Spot";
+
     TextView textViewLicence;
     SurfaceView cameraView;
     CameraSource cameraSource;
     final int requestCameraPermissionID = 1001;
+    Intent intentRDW;
 
     public SpotFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public String toString(){
+        return Title;
     }
 
     @Override
@@ -64,6 +73,7 @@ public class SpotFragment extends Fragment {
         textViewLicence = (TextView) view.findViewById(R.id.text_licenceplate);
         cameraView = (SurfaceView) view.findViewById(R.id.surface_view);
 
+        intentRDW = new Intent(getActivity(), RDWActivity.class);
         cameraView();
 
         return view;
@@ -126,9 +136,9 @@ public class SpotFragment extends Fragment {
                                     if(checkIfLicencePlate(item.getValue())){
                                         stringBuilder.append(item.getValue());
                                         stringBuilder.append("\n");
-                                        textViewLicence.setText(stringBuilder.toString());
-                                        //Hier wil ik een nieuwe activity starten die gaat checken wat voor
-                                        //auto het precies is en dergelijken
+                                        //textViewLicence.setText(stringBuilder.toString());
+                                        intentRDW.putExtra("licenceString", stringBuilder.toString());
+                                        startActivity(intentRDW);
                                     }
                                 }
                             }

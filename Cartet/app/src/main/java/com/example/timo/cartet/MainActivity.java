@@ -1,6 +1,7 @@
 package com.example.timo.cartet;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void setFragment(Fragment fragment){
-        setTitle(fragment.getTag());
+        setTitle((String)fragment.toString());
         FragmentTransaction fragmentTransactionSpot = getSupportFragmentManager().beginTransaction();
         fragmentTransactionSpot.replace(R.id.frame, fragment, fragment.getTag());
         fragmentTransactionSpot.commit();

@@ -13,11 +13,16 @@ import android.view.ViewGroup;
  */
 public class ProfileFragment extends Fragment {
 
+    private static String Title = "Profile";
 
     public ProfileFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public String toString(){
+        return Title;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
