@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -22,13 +23,18 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.Text;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
+
+import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity {
     SpotFragment fragmentSpot = new SpotFragment();
     CollectionsFragment fragmentCollections = new CollectionsFragment();
     ProfileFragment fragmentProfile = new ProfileFragment();
+
+    //private String android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

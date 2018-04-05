@@ -1,10 +1,14 @@
 package com.example.timo.cartet;
 
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -24,6 +28,10 @@ public class RDWActivity extends AppCompatActivity {
     ProgressBar progressBar;
     String licenceToCheck;
     Car carFound;
+    Button buttonCollect;
+
+    private String android_id;
+    Firebase database;
 
     String appToken = "bPg8jKW5MxNfiUbEqMnCvxwZj";
     URL rdwURL;
@@ -41,6 +49,23 @@ public class RDWActivity extends AppCompatActivity {
         licenceToCheck = prepareLicence(licenceToCheck);
         textViewLicence.setText(licenceToCheck);
         carFound = findCar(licenceToCheck);
+
+        android_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        database = new Firebase(android_id);
+
+        buttonCollect = (Button) findViewById(R.id.buttonCollect);
+        /*buttonCollect.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                try{
+                    database.uploadCar(carFound, carFound.getMerk());
+                }
+                catch(Exception e){
+                    Log.e("Upload Error", e.getMessage());
+                }
+            }
+        });*/
     }
 
     private String prepareLicence(String licenceToCheck) {
@@ -59,12 +84,12 @@ public class RDWActivity extends AppCompatActivity {
 
     private Car findCar(final String licence){
         //hier komt het opvragen van data bij het RDW
+        Car returnCar;
 
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 //progressBar.setVisibility(progressBar.VISIBLE);
-
                 try{
                     rdwURL = new URL("https://opendata.rdw.nl/resource/m9d7-ebf2.json?"
                             + "$$app_token=" + appToken
@@ -89,6 +114,7 @@ public class RDWActivity extends AppCompatActivity {
                         bufferedReader.close();
                         Car car = parseDataToClass(stringBuilder.toString());
                         textViewBrand.setText(car.ToString());
+                        database.uploadCar(car, car.getMerk());
                         //progressBar.setVisibility(progressBar.GONE);
                         myConnection.disconnect();
                     }

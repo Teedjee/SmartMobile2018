@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "352691660840",
+    "firebase_url": "https://cartet-fc3cc.firebaseio.com",
+    "project_id": "cartet-fc3cc",
+    "storage_bucket": "cartet-fc3cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352691660840:android:ef8bd7af7e1b55ee",
+        "android_client_info": {
+          "package_name": "com.example.timo.cartet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352691660840-p7iddc0fjtguski1adb2n35v32586hua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.timo.cartet",
+            "certificate_hash": "986645011e7bd9cba434b14749fff32d7dc4755e"
+          }
+        },
+        {
+          "client_id": "352691660840-p1fmpf34eseb183d6jenqdmbn75gi3bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6rVmnJw2wCIRgS5DOHluCfr_DJJ5vQpc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352691660840-p1fmpf34eseb183d6jenqdmbn75gi3bc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
