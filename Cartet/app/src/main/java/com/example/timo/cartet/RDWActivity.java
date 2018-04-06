@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,7 +25,6 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 public class RDWActivity extends AppCompatActivity {
-
     TextView textViewLicence;
     TextView textViewBrand;
     ProgressBar progressBar;
@@ -31,7 +33,10 @@ public class RDWActivity extends AppCompatActivity {
     Button buttonCollect;
 
     private String android_id;
-    Firebase database;
+    private FirebaseDatabase database;
+    private DatabaseReference idReference;
+    private DatabaseReference collectionsReference;
+    private DatabaseReference carsReference;
 
     String appToken = "bPg8jKW5MxNfiUbEqMnCvxwZj";
     URL rdwURL;
@@ -40,6 +45,10 @@ public class RDWActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rdw);
+
+        android_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        database = FirebaseDatabase.getInstance();
+        idReference = database.getReference(android_id);
 
         textViewLicence = (TextView) findViewById(R.id.textViewLicence);
         textViewBrand = (TextView) findViewById(R.id.textViewBrand);
@@ -50,22 +59,7 @@ public class RDWActivity extends AppCompatActivity {
         textViewLicence.setText(licenceToCheck);
         carFound = findCar(licenceToCheck);
 
-        android_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        database = new Firebase(android_id);
-
         buttonCollect = (Button) findViewById(R.id.buttonCollect);
-        /*buttonCollect.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                try{
-                    database.uploadCar(carFound, carFound.getMerk());
-                }
-                catch(Exception e){
-                    Log.e("Upload Error", e.getMessage());
-                }
-            }
-        });*/
     }
 
     private String prepareLicence(String licenceToCheck) {
@@ -112,9 +106,21 @@ public class RDWActivity extends AppCompatActivity {
                             stringBuilder.append(line).append("\n");
                         }
                         bufferedReader.close();
-                        Car car = parseDataToClass(stringBuilder.toString());
+                        final Car car = parseDataToClass(stringBuilder.toString());
                         textViewBrand.setText(car.ToString());
-                        database.uploadCar(car, car.getMerk());
+                        buttonCollect.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                try{
+                                    collectionsReference = idReference.child(car.getMerk());
+                                    carsReference = collectionsReference.child(car.getKenteken());
+                                    carsReference.setValue(car.ToString());
+                                }
+                                catch(Exception e){
+                                    Log.e("Upload Error", e.getMessage());
+                                }
+                            }
+                        });
                         //progressBar.setVisibility(progressBar.GONE);
                         myConnection.disconnect();
                     }

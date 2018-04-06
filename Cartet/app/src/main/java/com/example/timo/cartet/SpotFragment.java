@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -69,6 +70,16 @@ public class SpotFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED){
+            String[] manifestArray = {Manifest.permission.CAMERA};
+            ActivityCompat.requestPermissions(getActivity(),
+                    manifestArray,
+                    requestCameraPermissionID);
+        }
+
         View view = inflater.inflate(R.layout.fragment_spot, container, false);
         textViewLicence = (TextView) view.findViewById(R.id.text_licenceplate);
         cameraView = (SurfaceView) view.findViewById(R.id.surface_view);
