@@ -37,10 +37,10 @@ public class CollectionsFragment extends Fragment {
     private DatabaseReference collectionsReference;
     private DatabaseReference carsReference;
 
-    ExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
+    private ExpandableListView expListView;
+    private ExpandableListAdapter expListAdapter;
+    private List<String> listDataHeader;
+    private HashMap<String, List<String>> listHash;
 
     private static String Title = "Collections";
 
@@ -61,8 +61,6 @@ public class CollectionsFragment extends Fragment {
 
         collectionsLayout = (ViewGroup) view.findViewById(R.id.linearLayout);
         expListView = (ExpandableListView) view.findViewById(R.id.lvExp);
-        listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
 
         android_id = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         database = FirebaseDatabase.getInstance();
@@ -72,7 +70,7 @@ public class CollectionsFragment extends Fragment {
         idReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int numberOfCollections = 0;
+                List<List<Car>> collectionsList = new ArrayList<>();
                 for (DataSnapshot questionSnapshot: dataSnapshot.getChildren()) {
                     List<Car> cars = new ArrayList<>();
                     for(DataSnapshot carQuestionSnapshot: questionSnapshot.getChildren()){
@@ -80,11 +78,11 @@ public class CollectionsFragment extends Fragment {
                         Car car = parseDataToClass(carString);
                         cars.add(car);
                     }
-                    addCollection(questionSnapshot.getKey(), cars, numberOfCollections);
+                    collectionsList.add(cars);
                 }
-                listAdapter = new ExpandableListAdapter(getContext(), listDataHeader, listDataChild);
-                expListView.setAdapter(listAdapter);
-                numberOfCollections++;
+                displayData(collectionsList);
+                expListAdapter = new ExpandableListAdapter(getContext(), listDataHeader, listHash);
+                expListView.setAdapter(expListAdapter);
             }
 
             @Override
@@ -92,41 +90,52 @@ public class CollectionsFragment extends Fragment {
             }
         });
 
+
+
         return view;
     }
 
-    private Car parseDataToClass(String allData){
-        Car car = new Car(getValueFromKey(allData, "\"aantal_cilinders\""),
-                getValueFromKey(allData, "\"aantal_zitplaatsen\""),
-                getValueFromKey(allData, "\"cilinderinhoud\""),
-                getValueFromKey(allData, "\"eerste_kleur\""),
-                getValueFromKey(allData, "\"handelsbenaming\""),
-                getValueFromKey(allData, "\"inrichting\""),
-                getValueFromKey(allData, "\"kenteken\""),
-                getValueFromKey(allData, "\"lengte\""),
-                getValueFromKey(allData, "\"massa_ledig_voertuig\""),
-                getValueFromKey(allData, "\"merk\""),
-                getValueFromKey(allData, "\"voertuigsoort\""));
+    private void displayData(List<List<Car>> collections) {
+        listDataHeader = new ArrayList<>();
+        listHash = new HashMap<>();
 
+        int collectionCount = 0;
+        for(List<Car> carList: collections){
+            listDataHeader.add(carList.get(0).getMerk());
+            List<String> kentekens = new ArrayList<>();
+
+            int carCount = 0;
+            for(Car car: carList){
+                kentekens.add(carList.get(carCount).ToString());
+                carCount++;
+            }
+
+            listHash.put(listDataHeader.get(collectionCount), kentekens);
+            collectionCount++;
+        }
+    }
+
+    private Car parseDataToClass(String allData){
+        Car car = new Car(getValueFromKey(allData, "Aantal cilinders: "),
+                getValueFromKey(allData, "Aantal zitplaatsen: "),
+                getValueFromKey(allData, "Cilinderinhoud: "),
+                getValueFromKey(allData, "Kleur: "),
+                getValueFromKey(allData, "Serie: "),
+                getValueFromKey(allData, "Voertuigtype: "),
+                getValueFromKey(allData, "Kenteken: "),
+                getValueFromKey(allData, "Lengte: "),
+                getValueFromKey(allData, "Massa: "),
+                getValueFromKey(allData, "Merk: "),
+                getValueFromKey(allData, "Voertuigsoort: "));
         return car;
     }
 
     private String getValueFromKey(String allData, String key){
         int indexOfKey = allData.indexOf(key);
-        int indexOfValue = allData.indexOf(":", indexOfKey);
-        int endIndexOfValue = allData.indexOf("\n", indexOfValue);
-        String value = allData.substring(indexOfValue + 1, endIndexOfValue);
+        int indexOfValue = indexOfKey + key.length();
+        int endIndex = allData.indexOf("\n", indexOfValue);
+        String value = allData.substring(indexOfValue, endIndex);
 
         return value;
-    }
-
-    private void addCollection(String collectionName, List<Car> cars, int number){
-        
-        List<String> collection = new ArrayList<>();
-        for(Car car: cars){
-            collection.add(car.getKenteken());
-        }
-        listDataHeader.add(collectionName);
-        listDataChild.put(listDataHeader.get(number), collection);
     }
 }

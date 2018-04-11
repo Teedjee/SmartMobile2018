@@ -88,6 +88,7 @@ class Car {
                 + "Cilinderinhoud: " + getCilinderInhoud() + "\n"
                 + "Aantal cilinders: " + getAantalCilinders() + "\n"
                 + "Lengte: " + getLengte() + "\n"
-                + "Massa: " + getMassa();
+                + "Massa: " + getMassa() + "\n"
+                + "Aantal zitplaatsen: " + getAantalZitplaatsen() + "\n";
     }
 }
